@@ -100,8 +100,8 @@ export const RegisterOccupier=()=>{
 
 <div className="wrapper" style={{maxWidth:'38rem',width:'100%',margin:'0 auto',padding:'5rem 1.5 rem'}} >
 
-    <div className="card" style={{marginTop:'50px',padding:'1.5rem 2rem',border:'none',outline:'none',borderRadius:'4px',color:'#252a32',background:'#ffffff',boxShadow:'0 1px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24)'}} >
-    <h2 style={{textAlign:'center',color:'blue',borderBottom:'1px solid #000',margin:'10px 0 20px'}}>Register Occupier</h2>
+    <div className="card" style={{margin:'10px 0 20px',border:'none',outline:'none',borderRadius:'4px',color:'#252a32',background:'#ffffff',boxShadow:'0 1px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24)'}} >
+    <h2 style={{textAlign:'center',color:'#15AAD9',borderBottom:'1px solid #000',margin:'10px 0 20px'}}>Register Occupier</h2>
 
         <form className="form" style={{width:'100%',height:'auto',margin:'2rem 0'}}>
         <div className="form-group" style={divStyle} >
@@ -142,8 +142,8 @@ export const RegisterOccupier=()=>{
             
             
             <div className="form-group" style={{float:"right"}}>
-              <input type="button" name="submit" className="input-submit" value="Submit" onClick={PostData} style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#7579e7',display:'inline-block', marginRight:"1rem"}} />
-            <input type="button" name="cancel" className="input-submit" value="Cancel" onClick={handleCancel} style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#7579e7',display:'inline-block'}} />
+              <input type="button" name="submit" className="input-submit" value="Submit" onClick={PostData} style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block', marginRight:"1rem"}} />
+            <input type="button" name="cancel" className="input-submit" value="Cancel" onClick={handleCancel} style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block'}} />
             
             </div>
     
@@ -264,8 +264,8 @@ export const RegisterOwner=()=>{
 <div className="wrapper" style={{maxWidth:'38rem',width:'100%',margin:'0 auto',padding:'5rem 1.5 rem'}} >
 
 
-    <div className="card" style={{marginTop:'50px',padding:'1.5rem 2rem',border:'none',outline:'none',borderRadius:'4px',color:'#252a32',background:'#ffffff',boxShadow:'0 1px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24)'}} >
-        <h2 style={{textAlign:'center',color:'blue',borderBottom:'1px solid #000',margin:'10px 0 20px'}}>Register Owner</h2>
+    <div className="card" style={{margin:'10px 0 20px',border:'none',outline:'none',borderRadius:'4px',color:'#252a32',background:'#ffffff',boxShadow:'0 1px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24)'}} >
+        <h2 style={{textAlign:'center',color:'#15AAD9',borderBottom:'1px solid #000',margin:'10px 0 20px'}}>Register Owner</h2>
         
         <form className="form" method="POST"  style={{width:'100%',height:'auto',margin:'2rem 0'}}>
             <div className="form-group" style={divStyle} >
@@ -300,8 +300,8 @@ export const RegisterOwner=()=>{
             </div>
              
             <div className="form-group" style={{float:"right"}}>
-            <input type="button" name="submit" className="input-submit" onClick={PostData} value="Submit" style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#7579e7',display:'inline-block',marginRight:'1rem'}} />
-            <input type="button" name="cancel" className="input-submit" onClick={handleCancel} value="Cancel" style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#7579e7',display:'inline-block'}} />
+            <input type="button" name="submit" className="input-submit" onClick={PostData} value="Submit" style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block',marginRight:'1rem'}} />
+            <input type="button" name="cancel" className="input-submit" onClick={handleCancel} value="Cancel" style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block'}} />
             </div>  
         </form>  
     </div>

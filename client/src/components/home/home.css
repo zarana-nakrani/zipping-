@@ -1,0 +1,29 @@
+ 
+ .card {
+    position: fixed;
+    left: 18.25rem;
+    top: 4rem;
+    width: 65rem;
+    height: 40rem;
+    padding: 2rem;
+    border:none;
+    outline:none;
+    border-radius:4px;
+    color:#252a32;
+    background:#ffffff;
+    box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24);
+    
+}
+img{
+    width: 329px;
+height: 329px;
+}
+.img {
+    position: absolute;
+    width: 421px;
+    height: 421px;
+    left: 10%;
+    top: 2%;
+    border-radius: 50%;
+    background: rgba(129, 222, 252, 0.24);
+}

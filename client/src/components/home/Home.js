@@ -1,8 +1,10 @@
 import React from "react";
-import { getLocalStorage } from "../helpers/localStorage";
+import { getLocalStorage } from "../../helpers/localStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import "./home.css";
+import image from './info.svg'
 import {
   faUser,
   faCircleXmark,
@@ -11,6 +13,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(fas, faUser, faCircleXmark, faCirclePlus, faEnvelope, faPhone);
+
 
 function Home() {
   const data = getLocalStorage("user");
@@ -40,6 +43,7 @@ function Home() {
           <div
             className="card"
             style={{
+              display:"block",
               padding: "1.5rem 2rem",
               border: "none",
               outline: "none",
@@ -51,7 +55,7 @@ function Home() {
             }}
           >
             <div className="d-inline-block justify-content-center align-middle p-2 bd-highlight h-75 w-50">
-              <h2 style={{ color: "blue" }}>User Information</h2>
+              <h2 style={{ color: "#15AAD9" }}>User Information</h2>
               <hr
                 className="w-80"
                 style={{ borderBottom: "3px solid #2271b1" }}
@@ -116,6 +120,9 @@ function Home() {
                 <hr className="w-80 my-0" />
               </div>
             </div>
+            <div className="d-inline-block" style={{width:"50%", height:"100%", position:"absolute"}}> 
+            <img className="img" src={image} alt={"Info image"} />
+          </div>
           </div>
         </div>
       {/* </main> */}

@@ -1,11 +1,10 @@
 import React from 'react';
 import Header from './Header';
 import {BrowserRouter,Routes ,Route} from 'react-router-dom';
-import Home from './Home'
+import Home from '../components/home/Home'
 import Signup from './Signup';
 import Signin from './Signin';
 import NotFound from './NotFound';
-import AdminDashboard from './AdminDashboard';
 import Society  from './society/Society'
 // import {Units , RegisterOwner , RegisterOccupier} from './Units';
 import { UnitsTable } from "./Unit/UnitsTable"
@@ -14,6 +13,7 @@ import EditForm from './Unit/EditForm';
 import { CommitteeRole, Committees } from './committee/Committee';
 import { CommitteeTable } from './committee/CommitteeTable'
 import { EditCommForm } from './committee/EditCommForm';
+import Invoice from './Invoice/Invoice'
 
 const App = ()=> (
   
@@ -35,6 +35,7 @@ const App = ()=> (
           <Route exact path='/committee/committees' element={<Committees/>} />
           <Route exact path='/committee' element={<CommitteeTable/>}/>
           <Route exact path='/edit/comm/:rolename/:id' element={<EditCommForm />} />
+          <Route exact path='/invoice' element={<Invoice/>} />
           <Route element = {<NotFound/>}/>
         </Routes>
       </main>
