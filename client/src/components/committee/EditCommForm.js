@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; 
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 
 export const EditCommForm=()=>{
@@ -63,7 +63,7 @@ export const EditCommForm=()=>{
       value = e.target.value;
       setMember({...member, [name]: value})
     }
-  
+    let nav = useNavigate()
     const PatchData = async (e) => {
       e.preventDefault();
       const { membername, contact} = member
@@ -83,6 +83,8 @@ export const EditCommForm=()=>{
       }
       else{
         alert(data.success);
+        nav("/committee");
+        console.log("Updated Successfully")
       }
     }
 
@@ -96,7 +98,7 @@ export const EditCommForm=()=>{
   <div className="wrapper" style={{maxWidth:'38rem',width:'100%',margin:'0 auto',padding:'5rem 1.5 rem'}} >
   
   
-      <div className="card" style={{marginTop:'150px',padding:'1.5rem 2rem',border:'none',outline:'none',borderRadius:'4px',color:'#252a32',background:'#ffffff',boxShadow:'0 1px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24)'}} >
+      <div className="card" style={{margin:"10px 0 10px",border:'none',outline:'none',borderRadius:'4px',color:'#252a32',background:'#ffffff',boxShadow:'0 1px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24)'}} >
           <h2 style={{textAlign:'center',color:'blue',borderBottom:'1px solid #000',margin:'10px 0 20px'}}>Committee</h2>
           
           <form className="form" method="POST"  style={{width:'100%',height:'auto',margin:'2rem 0'}}>

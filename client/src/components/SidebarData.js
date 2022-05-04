@@ -3,7 +3,9 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io'; 
 import * as RiIcons from 'react-icons/ri';
-
+import * as GrIcons from 'react-icons/gr';
+import * as SiIcons from 'react-icons/si';
+import * as MdIcons from 'react-icons/md'
 export const SidebarData = [ 
     { 
         title: 'Home', 
@@ -15,14 +17,14 @@ export const SidebarData = [
     { 
         title: 'Society  ', 
         path: '/society', 
-        icon: <IoIcons.IoIosAlbums />, 
+        icon: <FaIcons.FaBuilding />, 
         cName: 'nav-text' 
     },
     
     { 
         title: 'Units', 
         path: '/units', 
-        icon: <IoIcons.IoIosBulb />,
+        icon: <RiIcons.RiCommunityFill />,
         iconClosed:<RiIcons.RiArrowDownFill />,
         iconOpened:<RiIcons.RiArrowUpFill />,
         
@@ -30,13 +32,13 @@ export const SidebarData = [
             {
                 title:'RegisterOwner',
                 path:'/units/registerowner',
-                icon:<IoIcons.IoMdHome />,
+                icon:<AiIcons.AiTwotoneCrown />,
                 cName:'sub-nav'
             },
             {
                 title:'RegisterOccupier',
                 path:'/units/registeroccupier',
-                icon:<IoIcons.IoIosFemale/>
+                icon:<GrIcons.GrUserAdmin/>
             }
         ]
         
@@ -47,7 +49,7 @@ export const SidebarData = [
     { 
         title: 'Committee', 
         path: '/committee', 
-        icon: <FaIcons.FaIndustry />,
+        icon: <SiIcons.SiHomeassistantcommunitystore />,
         
         iconClosed:<RiIcons.RiArrowDownSFill/>,
         iconOpened:<RiIcons.RiArrowUpSFill/>,
@@ -67,7 +69,16 @@ export const SidebarData = [
         ]
         
     },
-
+    {
+        title:"Invoice",
+        path:"/invoice",
+        icon: <FaIcons.FaFileInvoice />
+    },
+    {
+        title:"Payment Entry",
+        path:"/payment",
+        icon: <MdIcons.MdPayment />
+    }
 
     
 

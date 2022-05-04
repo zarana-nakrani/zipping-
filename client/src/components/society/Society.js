@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import './Society.css';
 import image from './info.svg'
+import isEmpty from "validator/lib/isEmpty";
+import isNumeric from "validator/lib/isNumeric";
 
 function Society() {
 
@@ -14,6 +16,7 @@ function Society() {
     branchName: "",
     ifsc: ""
   });
+  const [formError, setFormError] = useState({})
   let name, value;
    const handleOnChange = (event) =>{
     name = event.target.name;
@@ -24,6 +27,8 @@ function Society() {
   const PostData = async (event) =>{
     event.preventDefault()
     const { name, address, city, pincode, registration, bankName, branchName, ifsc } = info
+    setFormError(validated(name, address, city, pincode, registration, bankName, branchName, ifsc))
+    if(Object.keys(formError).length === 0){
     const res = await fetch("/society", {
       method : "POST",
       headers: {
@@ -44,6 +49,21 @@ function Society() {
       window.alert("Registered Successfully");
     }
   }
+  }
+
+  const validated = (name, address, city, pincode, registration, bankName, branchName, ifsc) => {
+    const errors = {}
+    if(isEmpty(name) || isEmpty(address) || isEmpty(city) || isEmpty(pincode) || isEmpty(registration) || isEmpty(bankName) || isEmpty(branchName) || isEmpty(ifsc)){
+      errors.errMsg = "All fields are required"
+    }
+    else if(!isNumeric(pincode)){
+      errors.pincode = "Enter a valid pincode"
+    }
+    else if(ifsc.length !== 14){
+      errors.ifsc = "ifsc code must be 14 characters long"
+    }
+    return errors
+  }
 
   return (
 <>
@@ -59,6 +79,7 @@ function Society() {
         <div className="d-block">
           <div className="d-inline-block" style={{width:"50%"}}>
           <form className="form" method="POST" style={{width:'100%',height:'auto',margin:'1rem 0'}}>
+            <p>{formError.errMsg}</p>
               <div className="form-group" style={{display:'-webkit-box',display:'flex',WebkitBoxOrient:'horizontal',WebkitBoxDirection:'normal',flexDirection:'row',WebkitBoxPack:'justify',justifyContent:'space-between',WebkitBoxAlign:'center',marginBottom:'1rem'}}>
                   <input type="text" name="name" id="name" className="input-field" onChange={handleOnChange} value={info.name} placeholder="Name"  style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'400',lineHeight:'inherit',width:'100%',height:'34px',padding:'0.75rem 1.25rem',border:'none',outline:'none',borderRadius:'2rem',color:'#252a32',background:'#f1f5f8'}}/>
               </div>
@@ -88,15 +109,13 @@ function Society() {
               <input type="button" name="cancel" className="input-submit  " value="Cancel" style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block'}} />
               
               </div>
-              
-       
           </form>
           </div>
           <div className="d-inline-block" style={{width:"50%", height:"100%", position:"absolute"}}> 
-    <img className="img" src={image} alt={"Info image"} />
+            <img className="img" src={image} alt={"Info image"} />
+          </div>
   </div>
   </div>
-      </div>
   </div>
   
 {/* </main> */}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faPencil, faAnglesUp } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +7,7 @@ library.add(faPencil);
 
 export const UnitsTable = ()=> {
   const [tableData, setTableData] = useState([]);
-  useMemo(async () => {
+  useEffect(async () => {
     const res = await fetch("/ownerdata", {
       method: "GET",
     });
@@ -17,7 +17,7 @@ export const UnitsTable = ()=> {
   }, []);
 
   return (
-    <table className="table table-striped container w-auto" style={{marginTop: "5rem"}}>
+    <table className="table table-striped container w-auto" style={{marginTop: "8rem"}}>
       <thead>
         <tr>
           <th>Building</th>
@@ -46,7 +46,7 @@ export const UnitsTable = ()=> {
                 <Link to={`/edit/${element._id}`}><button className="btn btn-success"><FontAwesomeIcon icon={faPencil}/> Edit</button></Link>
               </td>  
               <td>
-              <button className="btn btn-primary"><FontAwesomeIcon icon={ faAnglesUp} /> Update</button>
+              {/* <button className="btn btn-primary"><FontAwesomeIcon icon={ faAnglesUp} /> Update</button> */}
               </td>
             </tr>
           );

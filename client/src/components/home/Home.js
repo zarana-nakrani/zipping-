@@ -44,6 +44,7 @@ function Home() {
             className="card"
             style={{
               display:"block",
+              height:"40rem",
               padding: "1.5rem 2rem",
               border: "none",
               outline: "none",

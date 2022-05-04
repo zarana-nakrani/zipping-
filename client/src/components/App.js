@@ -14,17 +14,16 @@ import { CommitteeRole, Committees } from './committee/Committee';
 import { CommitteeTable } from './committee/CommitteeTable'
 import { EditCommForm } from './committee/EditCommForm';
 import Invoice from './Invoice/Invoice'
+import Payment from '../Payment';
 
 const App = ()=> (
   
     
       <BrowserRouter>
       <Header />
-      <main>
         <Routes>
           <Route exact path='/signup'element = {<Signup/>}/>
           <Route exact path='/signin'element = {<Signin/>}/>
-          {/* <Route exact path='/admin/dashboard' element = {<AdminDashboard/>}/> */}
           <Route exact path='/admin/dashboard' element={<Home />}></Route>
           <Route exact path='/society'element = {<Society/>}/>
           <Route exact path='/units' element={<UnitsTable/>} />
@@ -36,9 +35,9 @@ const App = ()=> (
           <Route exact path='/committee' element={<CommitteeTable/>}/>
           <Route exact path='/edit/comm/:rolename/:id' element={<EditCommForm />} />
           <Route exact path='/invoice' element={<Invoice/>} />
+          <Route exact path='/payment' element={<Payment/>} />
           <Route element = {<NotFound/>}/>
         </Routes>
-      </main>
       </BrowserRouter>
 );
       

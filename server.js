@@ -18,6 +18,8 @@ app.use(require("./routes/ownerRegister"))
 app.use(require("./routes/getData"))
 app.use(require("./routes/addcommdata"))
 app.use(require('./routes/getcommdata'))
+app.use(require("./routes/invoicedata"))
+app.use(require("./routes/paydata"))
 
 
 connectDB();

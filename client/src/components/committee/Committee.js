@@ -75,6 +75,12 @@ export const CommitteeRole=()=>{
     }
   }
 
+  const handleCancel = (e) => {
+    setData({
+      roleId: "",
+      rolename: ""
+    })
+  }
   
   const [tableData, setTableData] = useState([]);
   const getTabledata = async () => {
@@ -125,7 +131,7 @@ export const CommitteeRole=()=>{
  
             <div className="form-group" style={{float:"right"}}>
               <input type="button" name="submit" className="input-submit" value="Submit" onClick={handleSubmit} style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAd9',display:'inline-block', marginRight:"1rem"}} />
-            <input type="button" name="cancel" className="input-submit" value="Cancel"  style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block'}} />
+            <input type="button" name="cancel" className="input-submit" value="Cancel" onClick={handleCancel}  style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block'}} />
             
             </div>
     
@@ -225,6 +231,14 @@ export const Committees=()=>{
     setMember({...member, [name]: value})
   }
 
+  const handleCancel = () => {
+    setMember({
+      rolename: "",
+      membername:"",
+      contact: ""
+    })
+  }
+
   const PostData = async (e) => {
     e.preventDefault();
     const { rolename, membername, contact} = member
@@ -295,7 +309,7 @@ export const Committees=()=>{
              
             <div className="form-group" style={{float:"right"}}>
             <input type="button" name="submit" className="input-submit"  value="Submit" onClick={PostData} style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block',marginRight:'1rem'}} />
-            <input type="button" name="cancel" className="input-submit"  value="Cancel" style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block'}} />
+            <input type="button" name="cancel" className="input-submit"  value="Cancel" onClick={handleCancel} style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block'}} />
             </div>  
         </form>  
     </div>

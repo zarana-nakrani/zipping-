@@ -11,6 +11,14 @@ router.get("/ownerdata", (req, res) => {
     })
 })
 
+router.get("/unitownerdata", (req, res) => {
+    Owner.find({},{"_id":1,"ownername":1,"building":1,"houseNo":1}).then((owner)=>{
+        res.send(owner);
+    }).catch((err)=> {
+        res.status(500).json({"error":"Data not found"})
+    })
+})
+
 router.get("/ownerdata/:id", (req, res) => {
     const { id } = req.params
     Owner.findById({"_id":id})

@@ -6,10 +6,8 @@ import { showErrorMsg } from "../helpers/message";
 import { showLoading } from "../helpers/loading";
 import { signin } from '../api/auth';
 import { setAuthentication,isAuthenticated } from "../helpers/auth";
-import { getLocalStorage } from "../helpers/localStorage";
 
 const Signin =() =>{
-
     let navigate = useNavigate();
     useEffect(()=>{
         if(isAuthenticated()){
@@ -17,13 +15,10 @@ const Signin =() =>{
         }
     },[navigate]);
   const[formData,setFormData] = useState({
-    
     email:'',
     password:'',
     errorMsg:false,
     loading:false,
-    
-
 });  
    const {email,password,errorMsg,loading} =formData;
 
@@ -96,7 +91,7 @@ const handleSubmit = (e)=>{
 <div className="wrapper" style={{maxWidth:'38rem',width:'100%',margin:'0 auto',padding:'5rem 1.5 rem'}} >
 
     <div className="card" style={{padding:'1.5rem 2rem',border:'none',outline:'none',borderRadius:'4px',color:'#252a32',background:'#ffffff',boxShadow:'0 1px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24)',marginTop:'50px'}} >
-    <h2 style={{textAlign:'center',color:'#15AAD9',borderBottom:'1px solid #000',margin:'10px 0 20px'}}>Signin</h2>
+    <h2 style={{textAlign:'center',color:'blue',borderBottom:'1px solid #000',margin:'10px 0 20px'}}>Signin</h2>
 
 
         <form className="form" method='POST' onSubmit={handleSubmit} noValidate style={{width:'100%',height:'auto',margin:'2rem 0'}}>
@@ -112,7 +107,7 @@ const handleSubmit = (e)=>{
             
 
             <div className="form-group" style={{display:'-webkit-box',display:'flex',WebkitBoxOrient:'horizontal',WebkitBoxDirection:'normal',flexDirection:'row',WebkitBoxPack:'justify',justifyContent:'space-between',WebkitBoxAlign:'center',marginBottom:'1rem'}}>
-                <button type="submit" className='btn btn-primary btn-block' style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'#15AAD9',display:'inline-block',float:'left'}} 
+                <button type="submit" className='btn btn-primary btn-block' style={{fontFamily:'inherit',fontSize:'0.95rem',fontWeight:'500',lineHeight:'inherit',cursor:'pointer',padding:'0.65rem 2rem', border:'none',outline:'none',borderRadius:'2rem',textAlign:'center',color:'#ffffff',background:'teal',display:'inline-block',float:'left'}} 
  >Signin</button>   
             </div>
 

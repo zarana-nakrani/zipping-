@@ -1,10 +1,9 @@
- 
- .card {
+.card {
     position: fixed;
     left: 18.25rem;
     top: 4rem;
     width: 65rem;
-    height: 40rem;
+    height: auto;
     padding: 2rem;
     border:none;
     outline:none;
